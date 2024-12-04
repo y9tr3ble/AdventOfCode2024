@@ -35,4 +35,16 @@ const sum = diffs.reduce((curr, total) => {
   return curr + total;
 }, 0);
 
+let similarityScore = 0;
+leftSide.forEach((leftNum) => {
+  let count = 0;
+  rightSide.forEach((rightNum) => {
+    if (leftNum === rightNum) {
+      count++;
+    }
+  });
+  similarityScore += leftNum * count;
+});
+
 console.log(`Size = ${sum}`);
+console.log(`Similarity Score = ${similarityScore}`);
